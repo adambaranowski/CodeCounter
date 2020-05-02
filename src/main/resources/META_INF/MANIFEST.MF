@@ -1,0 +1,4 @@
+Manifest-Version: 2.1
+Main-Class: pl.adambaranowski.codecounter.main.GUIStarter
+Class-Path: pl.adambaranowski.codecounter.main.GUIStarter
+

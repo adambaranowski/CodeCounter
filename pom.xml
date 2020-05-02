@@ -48,6 +48,7 @@
     </dependencies>
 
     <build>
+        <defaultGoal>install</defaultGoal>
         <plugins>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -56,7 +57,7 @@
                     <appendAssemblyId>false</appendAssemblyId>
                     <archive>
                         <manifest>
-                            <mainClass>pl.adambaranowski.minesweeper.main.GUIStarter</mainClass>
+                            <mainClass>pl.adambaranowski.codecounter.main.GUIStarter</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
