@@ -1,6 +1,8 @@
 package pl.adambaranowski.codecounter.model;
 
-public enum Extension {
+import java.io.Serializable;
+
+public enum Extension implements Serializable {
     JAVA("Java"),
     C("C"),
     CPP("C++"),
@@ -13,7 +15,8 @@ public enum Extension {
     XML("XML"),
     JS("JavaScript"),
     JSP("JavaServerPages"),
-    TXT("SimpleText");
+    TXT("SimpleText"),
+    UNDEFINED("Undefined File");
 
 
 

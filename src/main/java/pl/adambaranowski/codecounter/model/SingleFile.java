@@ -1,12 +1,14 @@
 package pl.adambaranowski.codecounter.model;
 
-public class SingleFile {
+import java.io.Serializable;
+
+public class SingleFile implements Serializable {
 
     private int linesOfCode;
     private String title;
     private Extension extension;
 
-    public SingleFile(int linesOfCode, String title, Extension extension) {
+    public SingleFile( String title, Extension extension,int linesOfCode) {
         this.linesOfCode = linesOfCode;
         this.title = title;
         this.extension = extension;
