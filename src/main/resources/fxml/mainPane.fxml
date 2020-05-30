@@ -21,10 +21,10 @@
          <top>
             <Label styleClass="mainTitle" text="CodeCounter" BorderPane.alignment="CENTER">
                <textFill>
-                  <RadialGradient centerX="0.5" centerY="0.5" cycleMethod="REFLECT" focusAngle="-64.54" focusDistance="-0.2195121951219512" radius="0.524390243902439">
+                  <RadialGradient centerX="0.8352272727272727" centerY="0.34951456310679613" cycleMethod="REFLECT" focusAngle="-64.54" focusDistance="-0.2195121951219512" radius="0.524390243902439">
                      <stops>
                         <Stop color="BLACK" />
-                        <Stop color="#7c7c7c" offset="1.0" />
+                        <Stop color="#322b2b" offset="1.0" />
                      </stops>
                   </RadialGradient>
                </textFill></Label>
@@ -67,14 +67,14 @@
                            </HBox.margin></Button>
                      </children>
                   </HBox>
-                  <TableView fx:id="projectsTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="700.0">
+                  <TableView fx:id="projectsTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="750.0">
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                      <children>
-                        <Button fx:id="viewProjectButton" mnemonicParsing="false" styleClass="bigButton" text="View Project" />
+                        <Button fx:id="viewProjectButton" mnemonicParsing="false" styleClass="viewButton" text="View Project" />
                         <Button fx:id="removeProjectButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="dangerButton" text="Remove Project">
                            <effect>
                               <Glow />
@@ -89,7 +89,10 @@
                   </HBox>
                   <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="clearDbButton" mnemonicParsing="false" styleClass="dangerButton" text="ClearDb" />
+                        <Button fx:id="clearDbButton" mnemonicParsing="false" styleClass="dangerButton" text="ClearDb">
+                           <HBox.margin>
+                              <Insets bottom="5.0" right="5.0" />
+                           </HBox.margin></Button>
                      </children>
                   </HBox>
                </children>

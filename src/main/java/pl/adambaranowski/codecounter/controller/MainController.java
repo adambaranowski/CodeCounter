@@ -120,12 +120,14 @@ public class MainController implements ProjectsDbService, ProjectSearching {
 
             String selectedProjectTitle = projectsTable.getSelectionModel().getSelectedItem().getTitle();
 
-            projectsDb.setAllProjects(projectsDb.getAllProjects().stream()
-                    .filter(project -> !project.getTitle().equals(selectedProjectTitle)).collect(Collectors.toCollection(ArrayList::new)));
+            if(selectedProjectTitle!=null){
+                projectsDb.setAllProjects(projectsDb.getAllProjects().stream()
+                        .filter(project -> !project.getTitle().equals(selectedProjectTitle)).collect(Collectors.toCollection(ArrayList::new)));
 
-            saveProjectDb(projectsDb);
-            fillTable(projectsDb.getAllProjects());
-
+                saveProjectDb(projectsDb);
+                fillTable(projectsDb.getAllProjects());
+            }
+            
         });
     }
 

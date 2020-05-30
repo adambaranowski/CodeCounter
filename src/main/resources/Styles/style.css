@@ -5,7 +5,12 @@
 }
 
 .borderPane {
-    -fx-background-color: linear-gradient(to right, lightskyblue, lightgray);
+    -fx-background-color: lightgray;
+}
+
+.button:hover{
+
+    -fx-opacity: 0.7;
 }
 
 .bigButton {
@@ -13,7 +18,15 @@
     -fx-border-radius: 5px;
     -fx-text-fill: white;
     -fx-font-size: 22px;
-    -fx-background-color: #7bff9c;
+    -fx-background-color: #47c13f;
+}
+
+.viewButton{
+    -fx-font-weight: 700;
+    -fx-border-radius: 5px;
+    -fx-text-fill: white;
+    -fx-font-size: 22px;
+    -fx-background-color: #1fb4fa;
 }
 
 .mediumButton{
@@ -21,12 +34,12 @@
     -fx-border-radius: 5px;
     -fx-text-fill: white;
     -fx-font-size: 15px;
-    -fx-background-color: #7bff9c;
+    -fx-background-color: #47c13f;
 }
 
 .dangerButton {
     -fx-font-weight: 700;
-    -fx-font-size: 12px;
+    -fx-font-size: 13px;
     -fx-text-fill: white;
     -fx-border-radius: 5px;
     -fx-background-color: rgba(255, 0, 0, 0.79);
@@ -35,13 +48,13 @@
 .table-view{
     -fx-background-color: transparent;
     -fx-border-width: 0px;
-    -fx-font-size: 17px;
+    -fx-font-size: 15px;
 }
 
 .column-header {
     -fx-text-fill: white;
-    -fx-font-size: 15px;
-    -fx-background-color: lightblue;
+    -fx-font-size: 17px;
+    -fx-background-color: #a3a3a3;
     -fx-text-alignment: center;
     /*-fx-opacity: 0.20;*/
 }
