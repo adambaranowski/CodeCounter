@@ -22,7 +22,9 @@ public class MainController implements ProjectsDbService, ProjectSearching {
 
     private final String PROJECT_TITLE_COLUMN = "Title";
     private final String PROJECT_SIZE = "Lines of Code";
-    private final String PROJECT_DATE = "Added on";
+    private final String PROJECT_DATE = "Added";
+    private final String PROJECT_VERSIONS= "Versions";
+
     @FXML
     private TextField titleTextField;
     @FXML
@@ -68,21 +70,34 @@ public class MainController implements ProjectsDbService, ProjectSearching {
 
             if(addProject!=null) {
 
-                Optional<Project> existingProject = projectsDb.getAllProjects().stream()
-                        .filter(project -> project.getTitle().equals(titleTextField.getText())).findAny();
-
-                existingProject.ifPresent(project -> projectsDb.removeProject(project));
 
 
+                Project[] existingVersions = projectsDb.getAllProjects().stream()
+                        .filter(project -> project.getTitle().equals(titleTextField.getText())).toArray(Project[]::new);
 
-                Project newProject = createProject(addProject, titleTextField.getText());
+
+                //1 is always the newest version, when adding new version of project
+                //older version are being pushed down by incrementing version value
+                int version = 1;
+                int allVersions = 1;
+
+                for (Project p: existingVersions
+                     ) {
+                    allVersions++;
+                    p.setVersion(p.getVersion()+1);
+                }
+
+
+
+
+                Project newProject = createProject(addProject,titleTextField.getText(),version, allVersions);
                 projectsDb.saveProject(newProject);
 
-                System.out.println("Wszystkie pliki w projekcie: ");
-                for (SingleFile s : newProject.getFiles()
-                ) {
-                    System.out.println(s.getTitle());
-                }
+//                System.out.println("Wszystkie pliki w projekcie: ");
+//                for (SingleFile s : newProject.getFiles()
+//                ) {
+//                    System.out.println(s.getTitle());
+//                }
 
                 saveProjectDb(projectsDb);
                 fillTable(projectsDb.getAllProjects());
@@ -131,6 +146,10 @@ public class MainController implements ProjectsDbService, ProjectSearching {
         projectDateColumn.setCellValueFactory(new PropertyValueFactory<>("commitDate"));
         projectsTable.getColumns().add(projectDateColumn);
 
+        TableColumn<Project, String> projectVersionColumn = new TableColumn<>(PROJECT_VERSIONS);
+        projectVersionColumn.setCellValueFactory(new PropertyValueFactory<>("allVersions"));
+        projectsTable.getColumns().add(projectVersionColumn);
+
     }
 
     private void fillTable(List<Project> projects) {
@@ -139,7 +158,9 @@ public class MainController implements ProjectsDbService, ProjectSearching {
 
         for (Project project : projects
         ) {
-            items.add(project);
+            //add only the latest version (version=1)
+            if(project.getVersion()==1)
+                items.add(project);
         }
     }
 

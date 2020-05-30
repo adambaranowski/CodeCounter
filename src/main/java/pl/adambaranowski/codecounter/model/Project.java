@@ -7,13 +7,26 @@ import java.util.List;
 
 public class Project implements Serializable {
 
+    private int version;
+    private int allVersions;
+
+    public int getAllVersions() {
+        return allVersions;
+    }
+
+    public void setAllVersions(int allVersions) {
+        this.allVersions = allVersions;
+    }
+
     private String title;
     private List<SingleFile> files;
     private LocalDateTime commitDate;
 
     private int totalLines;
 
-    public Project(String title, List<SingleFile> files, int totalLines) {
+    public Project(int version, int allVersions, String title, List<SingleFile> files, int totalLines) {
+        this.version = version;
+        this.allVersions = allVersions;
         this.title = title;
         this.files = files;
         this.totalLines = totalLines;
@@ -50,5 +63,13 @@ public class Project implements Serializable {
 
     public void setTotalLines(int totalLines) {
         totalLines = totalLines;
+    }
+
+    public int getVersion() {
+        return version;
+    }
+
+    public void setVersion(int version) {
+        this.version = version;
     }
 }

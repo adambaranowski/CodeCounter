@@ -4,10 +4,8 @@
     <list default="true" id="4869bf7e-3013-4efd-91de-d156c64bf5bd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/model/Extension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/model/Extension.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/functions/ProjectSearching.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/functions/ProjectSearching.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/model/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/model/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/model/SingleFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/model/SingleFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/mainPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/mainPane.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +103,8 @@
       <workItem from="1588458864051" duration="47000" />
       <workItem from="1588541129433" duration="12000" />
       <workItem from="1590695269155" duration="7222000" />
-      <workItem from="1590768190766" duration="12854000" />
+      <workItem from="1590768190766" duration="13710000" />
+      <workItem from="1590837247543" duration="1456000" />
     </task>
     <servers />
   </component>

@@ -13,14 +13,14 @@ import java.util.List;
 
 public interface ProjectSearching {
 
-    default Project createProject(File file, String title) {
+    default Project createProject(File file, String title, int version, int allVersions) {
         if (title.length() < 1) {
             title = file.getName();
         }
 
         List<SingleFile> singleFiles = new ArrayList<>();
         digInProject(file, singleFiles);
-        return new Project(title, singleFiles, totalProjectLines(singleFiles));
+        return new Project(version, allVersions, title, singleFiles, totalProjectLines(singleFiles));
     }
 
     private void digInProject(File file, List<SingleFile> singleFiles) {
