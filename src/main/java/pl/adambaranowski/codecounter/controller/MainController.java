@@ -1,6 +1,8 @@
 package pl.adambaranowski.codecounter.controller;
 
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -15,8 +17,10 @@ import pl.adambaranowski.codecounter.model.ProjectsDb;
 import pl.adambaranowski.codecounter.model.SingleFile;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class MainController implements ProjectsDbService, ProjectSearching {
 
@@ -35,6 +39,12 @@ public class MainController implements ProjectsDbService, ProjectSearching {
     private Button addProjectButton;
     @FXML
     private Button clearDbButton;
+
+    @FXML
+    private Button viewProjectButton;
+    @FXML
+    private Button removeProjectButton;
+
     @FXML
     private TableView<Project> projectsTable;
     private File addProject;
@@ -49,8 +59,6 @@ public class MainController implements ProjectsDbService, ProjectSearching {
         projectsDb = loadProjectsDb();
 
         fillTable(projectsDb.getAllProjects());
-
-
     }
 
 
@@ -60,6 +68,7 @@ public class MainController implements ProjectsDbService, ProjectSearching {
         configureTableColumns();
         configureAddProjectButton();
         configureClearDbButton();
+        configureRemoveProjectButton();
 
     }
 
@@ -102,6 +111,20 @@ public class MainController implements ProjectsDbService, ProjectSearching {
                 saveProjectDb(projectsDb);
                 fillTable(projectsDb.getAllProjects());
             }
+
+        });
+    }
+
+    private void configureRemoveProjectButton(){
+        removeProjectButton.setOnAction(actionEvent -> {
+
+            String selectedProjectTitle = projectsTable.getSelectionModel().getSelectedItem().getTitle();
+
+            projectsDb.setAllProjects(projectsDb.getAllProjects().stream()
+                    .filter(project -> !project.getTitle().equals(selectedProjectTitle)).collect(Collectors.toCollection(ArrayList::new)));
+
+            saveProjectDb(projectsDb);
+            fillTable(projectsDb.getAllProjects());
 
         });
     }
