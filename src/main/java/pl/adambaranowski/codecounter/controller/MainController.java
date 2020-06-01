@@ -1,8 +1,6 @@
 package pl.adambaranowski.codecounter.controller;
 
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -10,25 +8,24 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.DirectoryChooser;
-import pl.adambaranowski.codecounter.functions.ProjectSearching;
-import pl.adambaranowski.codecounter.functions.ProjectsDbService;
+import pl.adambaranowski.codecounter.functionsImpl.ProjectCreatorImpl;
+import pl.adambaranowski.codecounter.functionsImpl.ProjectsDbServiceImpl;
 import pl.adambaranowski.codecounter.model.Project;
 import pl.adambaranowski.codecounter.model.ProjectsDb;
-import pl.adambaranowski.codecounter.model.SingleFile;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class MainController implements ProjectsDbService, ProjectSearching {
+public class MainController {
 
     private final String PROJECT_TITLE_COLUMN = "Title";
     private final String PROJECT_SIZE = "Lines of Code";
     private final String PROJECT_DATE = "Added";
-    private final String PROJECT_VERSIONS= "Versions";
-
+    private final String PROJECT_VERSIONS = "Versions";
+    private final ProjectsDbServiceImpl DB_SERVICE = ProjectsDbServiceImpl.getInstance();
+    private final ProjectCreatorImpl PROJECT_CREATOR = ProjectCreatorImpl.getInstance();
     @FXML
     private TextField titleTextField;
     @FXML
@@ -39,12 +36,10 @@ public class MainController implements ProjectsDbService, ProjectSearching {
     private Button addProjectButton;
     @FXML
     private Button clearDbButton;
-
     @FXML
     private Button viewProjectButton;
     @FXML
     private Button removeProjectButton;
-
     @FXML
     private TableView<Project> projectsTable;
     private File addProject;
@@ -56,11 +51,10 @@ public class MainController implements ProjectsDbService, ProjectSearching {
 
         //Load projects database if exist or create new
 
-        projectsDb = loadProjectsDb();
+        projectsDb = DB_SERVICE.loadProjectsDb();
 
         fillTable(projectsDb.getAllProjects());
     }
-
 
 
     private void configureButtons() {
@@ -73,12 +67,10 @@ public class MainController implements ProjectsDbService, ProjectSearching {
     }
 
 
-
-    private void configureAddProjectButton(){
+    private void configureAddProjectButton() {
         addProjectButton.setOnAction(actionEvent -> {
 
-            if(addProject!=null) {
-
+            if (addProject != null) {
 
 
                 Project[] existingVersions = projectsDb.getAllProjects().stream()
@@ -90,56 +82,47 @@ public class MainController implements ProjectsDbService, ProjectSearching {
                 int version = 1;
                 int allVersions = 1;
 
-                for (Project p: existingVersions
-                     ) {
+                for (Project p : existingVersions
+                ) {
                     allVersions++;
-                    p.setVersion(p.getVersion()+1);
+                    p.setVersion(p.getVersion() + 1);
                 }
 
 
-
-
-                Project newProject = createProject(addProject,titleTextField.getText(),version, allVersions);
+                Project newProject = PROJECT_CREATOR.createProject(addProject, titleTextField.getText(), version, allVersions);
                 projectsDb.saveProject(newProject);
 
-//                System.out.println("Wszystkie pliki w projekcie: ");
-//                for (SingleFile s : newProject.getFiles()
-//                ) {
-//                    System.out.println(s.getTitle());
-//                }
 
-                saveProjectDb(projectsDb);
+                DB_SERVICE.saveProjectDb(projectsDb);
                 fillTable(projectsDb.getAllProjects());
             }
 
         });
     }
 
-    private void configureRemoveProjectButton(){
+    private void configureRemoveProjectButton() {
         removeProjectButton.setOnAction(actionEvent -> {
 
             String selectedProjectTitle = projectsTable.getSelectionModel().getSelectedItem().getTitle();
 
-            if(selectedProjectTitle!=null){
+            if (selectedProjectTitle != null) {
                 projectsDb.setAllProjects(projectsDb.getAllProjects().stream()
                         .filter(project -> !project.getTitle().equals(selectedProjectTitle)).collect(Collectors.toCollection(ArrayList::new)));
 
-                saveProjectDb(projectsDb);
+                DB_SERVICE.saveProjectDb(projectsDb);
                 fillTable(projectsDb.getAllProjects());
             }
-            
         });
     }
 
-    private void configureClearDbButton(){
+    private void configureClearDbButton() {
         clearDbButton.setOnAction(actionEvent -> {
             projectsDb.clearAll();
-            saveProjectDb(projectsDb);
+            DB_SERVICE.saveProjectDb(projectsDb);
 
             fillTable(projectsDb.getAllProjects());
         });
     }
-
 
     private void configureDirectoryBrowseButton() {
         directoryBrowseButton.setOnAction(actionEvent -> {
@@ -156,7 +139,6 @@ public class MainController implements ProjectsDbService, ProjectSearching {
 
         });
     }
-
 
     private void configureTableColumns() {
         TableColumn<Project, String> projectTitleColumn = new TableColumn<>(PROJECT_TITLE_COLUMN);
@@ -184,10 +166,8 @@ public class MainController implements ProjectsDbService, ProjectSearching {
         for (Project project : projects
         ) {
             //add only the latest version (version=1)
-            if(project.getVersion()==1)
+            if (project.getVersion() == 1)
                 items.add(project);
         }
     }
-
-
 }

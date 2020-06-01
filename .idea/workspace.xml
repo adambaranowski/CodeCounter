@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4869bf7e-3013-4efd-91de-d156c64bf5bd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Styles/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/mainPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/mainPane.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectsDb.db" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectsDb.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectsDb.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/functions/ProjectSearching.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/functions/ProjectCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/functions/ProjectsDbService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/functions/ProjectsDbService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/main/GUIStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/main/GUIStarter.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,9 +23,9 @@
         <option value="FxmlFile" />
         <option value="module-info" />
         <option value="Enum" />
-        <option value="Class" />
-        <option value="Interface" />
         <option value="CSS File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -105,7 +110,8 @@
       <workItem from="1588541129433" duration="12000" />
       <workItem from="1590695269155" duration="7222000" />
       <workItem from="1590768190766" duration="13710000" />
-      <workItem from="1590837247543" duration="10445000" />
+      <workItem from="1590837247543" duration="10562000" />
+      <workItem from="1591003590532" duration="6902000" />
     </task>
     <servers />
   </component>
