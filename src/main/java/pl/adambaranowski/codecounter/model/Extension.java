@@ -3,6 +3,11 @@ package pl.adambaranowski.codecounter.model;
 import java.io.Serializable;
 
 public enum Extension implements Serializable {
+
+    /**
+     * All extensions that are supported in application
+     */
+
     JAVA("Java"),
     C("C"),
     CPP("C++"),
@@ -17,9 +22,6 @@ public enum Extension implements Serializable {
     JSP("JavaServerPages"),
     TXT("SimpleText"),
     UNDEFINED("Undefined File");
-
-
-
 
     private final String fileType;
 

@@ -35,7 +35,8 @@ public class ProjectsDbServiceImpl implements ProjectsDbService {
     /**
      *
      * @return object od DataBase (containing all projects)
-     * created from serialized in file, which name is stored in DB_FILE_NAME
+     * created from serialized in file, which name is stored in DB_FILE_NAME. If the file does not exist,
+     * it creates the new one.
      */
     @Override
     public ProjectsDb loadProjectsDb() {
@@ -46,13 +47,10 @@ public class ProjectsDbServiceImpl implements ProjectsDbService {
                 FileInputStream fis = new FileInputStream(DB_FILE_NAME);
                 ObjectInputStream ois = new ObjectInputStream(fis);
         ){
-
             projectsDb = (ProjectsDb)ois.readObject();
             System.out.println("Wczytano baze danych projektów");
-
         }catch (Exception e){
             System.out.println("Nie wczytano bazy danych projektów");
-            //e.printStackTrace();
         }
         if (projectsDb==null) {
             projectsDb = new ProjectsDb();

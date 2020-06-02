@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4869bf7e-3013-4efd-91de-d156c64bf5bd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectsDb.db" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectsDb.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectsDb.obj" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/functions/ProjectSearching.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/functions/ProjectCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/functions/ProjectsDbService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/functions/ProjectsDbService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/main/GUIStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/main/GUIStarter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/functionsImpl/ProjectsDbServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/functionsImpl/ProjectsDbServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/functionsImpl/SingleFileCreatorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/functionsImpl/SingleFileCreatorImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/model/Extension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/model/Extension.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/model/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/model/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/model/SingleFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/model/SingleFile.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +111,8 @@
       <workItem from="1590695269155" duration="7222000" />
       <workItem from="1590768190766" duration="13710000" />
       <workItem from="1590837247543" duration="10562000" />
-      <workItem from="1591003590532" duration="6902000" />
+      <workItem from="1591003590532" duration="11177000" />
+      <workItem from="1591098050677" duration="2825000" />
     </task>
     <servers />
   </component>

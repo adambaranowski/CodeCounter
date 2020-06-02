@@ -17,6 +17,7 @@ public class SingleFileCreatorImpl implements SingleFileCreator {
 
     /**
      * Creates model SingleFile from given file
+     *
      * @param file - given file
      * @return created model SingleFile from given file
      */
@@ -24,6 +25,7 @@ public class SingleFileCreatorImpl implements SingleFileCreator {
     @Override
     public SingleFile createSingleFile(File file) {
         int linesOfCode = 0;
+
 
         Extension extension;
         try {
@@ -34,23 +36,37 @@ public class SingleFileCreatorImpl implements SingleFileCreator {
             extension = Extension.valueOf("UNDEFINED");
         }
 
-        try (
-                FileReader fileReader = new FileReader(file);
-                BufferedReader bufferedReader = new BufferedReader(fileReader)
 
-        ) {
-            String nextLine = null;
-            while ((nextLine = bufferedReader.readLine()) != null) {
-                linesOfCode++;
+        StringBuilder codeBuilder = new StringBuilder();
+        if (extension != Extension.UNDEFINED) {
+
+            try (
+                    FileReader fileReader = new FileReader(file);
+                    BufferedReader bufferedReader = new BufferedReader(fileReader)
+
+            ) {
+                String nextLine = null;
+                while ((nextLine = bufferedReader.readLine()) != null) {
+                    codeBuilder.append(nextLine);
+                    linesOfCode++;
+                }
+
+
+            } catch (Exception e) {
             }
-
-        } catch (Exception e) {
         }
-        return new SingleFile(file.getName(), extension, linesOfCode);
-    }
+
+        //Use builder of SingleFile
+        return SingleFile.builder()
+                .title(file.getName())
+                .code(codeBuilder.toString())
+                .extension(extension)
+                .linesOfCode(linesOfCode)
+                .build();
+
+}
 
     /**
-     *
      * @param file - given file
      * @return extension of given file in String format
      */

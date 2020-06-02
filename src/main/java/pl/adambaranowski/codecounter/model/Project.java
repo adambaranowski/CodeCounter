@@ -2,7 +2,6 @@ package pl.adambaranowski.codecounter.model;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 
 public class Project implements Serializable {
@@ -10,13 +9,6 @@ public class Project implements Serializable {
     private int version;
     private int allVersions;
 
-    public int getAllVersions() {
-        return allVersions;
-    }
-
-    public void setAllVersions(int allVersions) {
-        this.allVersions = allVersions;
-    }
 
     private String title;
     private List<SingleFile> files;
@@ -71,5 +63,13 @@ public class Project implements Serializable {
 
     public void setVersion(int version) {
         this.version = version;
+    }
+
+    public int getAllVersions() {
+        return allVersions;
+    }
+
+    public void setAllVersions(int allVersions) {
+        this.allVersions = allVersions;
     }
 }

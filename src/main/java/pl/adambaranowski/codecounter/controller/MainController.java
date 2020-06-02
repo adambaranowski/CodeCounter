@@ -49,8 +49,6 @@ public class MainController {
 
         configureButtons();
 
-        //Load projects database if exist or create new
-
         projectsDb = DB_SERVICE.loadProjectsDb();
 
         fillTable(projectsDb.getAllProjects());
