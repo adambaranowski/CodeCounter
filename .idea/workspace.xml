@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4869bf7e-3013-4efd-91de-d156c64bf5bd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/pl/adambaranowski/codecounter/functionsImpl/ProjectCreatorImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectsDb.db" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectsDb.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/functionsImpl/ProjectsDbServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/functionsImpl/ProjectsDbServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/functionsImpl/SingleFileCreatorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/functionsImpl/SingleFileCreatorImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/model/Extension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/model/Extension.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/model/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/model/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/model/SingleFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/model/SingleFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/functionsImpl/ProjectCreatorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/adambaranowski/codecounter/functionsImpl/ProjectCreatorImpl.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +23,7 @@
         <option value="CSS File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -38,6 +36,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Zadanka/Coding_Exercises" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -45,6 +45,12 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="pl.adambaranowski.codecounter.functionsImpl" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Adam Baranowski\Documents\PROGRAMOWANIE\JAVA\CodeCounter\src\main\resources\META_INF" />
     </key>
@@ -61,7 +67,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.CodeCounter">
+  <component name="RunManager" selected="JUnit.SingleFileCreatorImplTest.fileWithoutDeclaredExtensionShouldReturnUndefined">
     <configuration name="CodeCounter" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="pl.adambaranowski.codecounter.main.GUIStarter" />
       <module name="CodeCounter" />
@@ -84,15 +90,54 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SingleFileCreatorImplTest.fileWithoutDeclaredExtensionShouldReturnUndefined" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodeCounter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.adambaranowski.codecounter.functionsImpl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.adambaranowski.codecounter.functionsImpl" />
+      <option name="MAIN_CLASS_NAME" value="pl.adambaranowski.codecounter.functionsImpl.SingleFileCreatorImplTest" />
+      <option name="METHOD_NAME" value="fileWithoutDeclaredExtensionShouldReturnUndefined" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SingleFileCreatorImplTest.getExtensionShouldReturnCorrectExtension" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodeCounter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.adambaranowski.codecounter.functionsImpl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.adambaranowski.codecounter.functionsImpl" />
+      <option name="MAIN_CLASS_NAME" value="pl.adambaranowski.codecounter.functionsImpl.SingleFileCreatorImplTest" />
+      <option name="METHOD_NAME" value="getExtensionShouldReturnCorrectExtension" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.CodeCounter" />
       <item itemvalue="Application.GUIStarter" />
+      <item itemvalue="JUnit.SingleFileCreatorImplTest.getExtensionShouldReturnCorrectExtension" />
+      <item itemvalue="JUnit.SingleFileCreatorImplTest.fileWithoutDeclaredExtensionShouldReturnUndefined" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SingleFileCreatorImplTest.fileWithoutDeclaredExtensionShouldReturnUndefined" />
+        <item itemvalue="JUnit.SingleFileCreatorImplTest.getExtensionShouldReturnCorrectExtension" />
         <item itemvalue="Application.GUIStarter" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="showServicesTree" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -112,7 +157,10 @@
       <workItem from="1590768190766" duration="13710000" />
       <workItem from="1590837247543" duration="10562000" />
       <workItem from="1591003590532" duration="11177000" />
-      <workItem from="1591098050677" duration="2825000" />
+      <workItem from="1591098050677" duration="4165000" />
+      <workItem from="1591539090224" duration="12000" />
+      <workItem from="1594669735225" duration="1874000" />
+      <workItem from="1594733409158" duration="3201000" />
     </task>
     <servers />
   </component>

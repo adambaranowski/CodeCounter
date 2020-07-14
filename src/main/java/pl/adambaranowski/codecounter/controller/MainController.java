@@ -8,6 +8,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.DirectoryChooser;
+import pl.adambaranowski.codecounter.functions.ProjectCreator;
+import pl.adambaranowski.codecounter.functions.ProjectsDbService;
 import pl.adambaranowski.codecounter.functionsImpl.ProjectCreatorImpl;
 import pl.adambaranowski.codecounter.functionsImpl.ProjectsDbServiceImpl;
 import pl.adambaranowski.codecounter.model.Project;
@@ -24,8 +26,8 @@ public class MainController {
     private final String PROJECT_SIZE = "Lines of Code";
     private final String PROJECT_DATE = "Added";
     private final String PROJECT_VERSIONS = "Versions";
-    private final ProjectsDbServiceImpl DB_SERVICE = ProjectsDbServiceImpl.getInstance();
-    private final ProjectCreatorImpl PROJECT_CREATOR = ProjectCreatorImpl.getInstance();
+    private final ProjectsDbService DB_SERVICE = ProjectsDbServiceImpl.getInstance();
+    private final ProjectCreator PROJECT_CREATOR = ProjectCreatorImpl.getInstance();
     @FXML
     private TextField titleTextField;
     @FXML

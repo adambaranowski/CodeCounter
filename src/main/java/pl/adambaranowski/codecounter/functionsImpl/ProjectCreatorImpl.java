@@ -85,7 +85,7 @@ public class ProjectCreatorImpl extends SingleFileCreatorImpl implements Project
      * from list:
      *
      * @param singleFiles - list of all project files
-     *                    and sumarise them.
+     *                    and summarise them.
      * @return sum of all lines of code in project
      */
     private int totalProjectLines(List<SingleFile> singleFiles) {
